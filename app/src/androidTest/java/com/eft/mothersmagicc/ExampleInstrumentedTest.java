@@ -1,4 +1,4 @@
-package com.example.mothersmagic;
+package com.eft.mothersmagicc;
 
 import android.content.Context;
 
