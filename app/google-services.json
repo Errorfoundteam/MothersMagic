@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "84424602955",
+    "firebase_url": "https://mother-s-magic.firebaseio.com",
+    "project_id": "mother-s-magic",
+    "storage_bucket": "mother-s-magic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84424602955:android:89b972efec48235103e4ce",
+        "android_client_info": {
+          "package_name": "com.eft.mothersmagic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84424602955-epdiqd9f367uni1vss7bt60aephgovgn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eft.mothersmagic",
+            "certificate_hash": "2631a73b21092ffec14f7ea1d1484eb6d5d60df2"
+          }
+        },
+        {
+          "client_id": "84424602955-q42ehuahi3k84c6a1fjg804s1n16mqfh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eft.mothersmagic",
+            "certificate_hash": "1de209113d7066f452b4d72241015aa896017cb5"
+          }
+        },
+        {
+          "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZoXYq22VKf_czOhTDFUlNYLN7e4qZ6kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84424602955:android:bbdddac2049e830b03e4ce",
+        "android_client_info": {
+          "package_name": "com.eft.mothersmagicc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZoXYq22VKf_czOhTDFUlNYLN7e4qZ6kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84424602955:android:a90ed34806f5697b03e4ce",
+        "android_client_info": {
+          "package_name": "com.example.mothersmagic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZoXYq22VKf_czOhTDFUlNYLN7e4qZ6kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
