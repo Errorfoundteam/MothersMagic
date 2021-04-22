@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 // ...
-                progressbar.setVisibility(View.GONE);
+//                progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             } catch (Throwable throwable) {
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
 //            progressbar.setVisibility(View.GONE);}
-        }
+        }}
         private void firebaseAuthWithGoogle (GoogleSignInAccount acct){
 
 
@@ -107,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUser(user);
-                                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
-                                startActivity(intent);
+//                                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
+//                                startActivity(intent);
 
 
                             } else {
-                                Toast.makeText(loginjava.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(loginjava.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
 
 
                             }
@@ -125,10 +125,9 @@ public class MainActivity extends AppCompatActivity {
         private void updateUser (FirebaseUser user){
 
 //        progressbar.setVisibility(View.GONE);
-            Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+//            Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            startActivity(intent);
         }
 
     }
-}
