@@ -13,13 +13,14 @@ import android.widget.ImageView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 
-class splash : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         val logo=findViewById<ImageView>(R.id.logoo)
         val topamin : Animation = AnimationUtils.loadAnimation(this,R.anim.top_animation)
         logo.animation = topamin
+
 
         val phAccount = FirebaseAuth.getInstance()
         val googleAccount = GoogleSignIn.getLastSignedInAccount(this)
@@ -49,7 +50,7 @@ class splash : AppCompatActivity() {
                     }
                     finish()
                 },
-                5000
+                3000
         )
     }
 }

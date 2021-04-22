@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/splashhome_back"
     android:layout_height="match_parent"
-    tools:context=".splash">
+    tools:context=".SplashActivity">
 
     <ImageView
         android:id="@+id/logoo"
