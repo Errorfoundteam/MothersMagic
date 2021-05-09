@@ -43,4 +43,5 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
 }
