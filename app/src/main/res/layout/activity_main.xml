@@ -52,7 +52,8 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@+id/viewPagerLoginActivity"
         app:layout_constraintStart_toStartOf="@+id/viewPagerLoginActivity"
-        app:layout_constraintTop_toBottomOf="@+id/viewPagerLoginActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerLoginActivity"
+        tools:ignore="MissingClass" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="159dp"
