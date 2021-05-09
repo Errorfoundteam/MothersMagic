@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Context;
@@ -41,14 +42,18 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import java.util.concurrent.TimeUnit;
+
+import kotlin.jvm.internal.Intrinsics;
 
 public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
 EditText phnumber;
+Button ButtonPhoneLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,23 @@ EditText phnumber;
 
         phnumber=findViewById(R.id.phnumber);
         mAuth = FirebaseAuth.getInstance();
+
+
+        Button ButtonPhoneLogin=findViewById(R.id.ButtonPhoneLogin);
+        ButtonPhoneLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (phnumber.getText().toString().length() == 10){
+                    Intent intent = new Intent(getBaseContext(), otpActivity.class);
+                    intent.putExtra("Phnumber", phnumber.getText().toString());
+                    startActivity(intent);
+                }
+                else{
+                    phnumber.setError("Enter Valid Number");
+                }
+            }
+        });
+
 
         Button gbutton=findViewById(R.id.Gmailbutton);
         createRequest();
