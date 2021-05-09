@@ -7,8 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/splashhome_back"
     android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -88,9 +87,7 @@
             android:maxLines="1"
             android:paddingStart="40dp"
             android:paddingEnd="5dp"
-            android:textColor="#000"
-            android:paddingLeft="40dp"
-            android:paddingRight="5dp" />
+            android:textColor="#000" />
 
         <Button
             android:id="@+id/ButtonPhoneLogin"
