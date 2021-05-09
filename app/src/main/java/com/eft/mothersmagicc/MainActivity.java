@@ -48,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
 TextView text;
+EditText phnumberEdit;
+String phnumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //hello
+        phnumberEdit=findViewById(R.id.phnumber);
         mAuth = FirebaseAuth.getInstance();
 text=findViewById(R.id.textt);
         Button gbutton=findViewById(R.id.Gmailbutton);
@@ -139,6 +142,9 @@ text=findViewById(R.id.textt);
             Toast.makeText(this, user.getEmail().toString(), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "HeLLo  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(getBaseContext(), otpActivity.class);
+            intent.putExtra("Phnumber", phnumberEdit.getText().toString());
+            startActivity(intent);
         }
 
     }
