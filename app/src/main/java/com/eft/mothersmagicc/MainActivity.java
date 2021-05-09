@@ -47,17 +47,27 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
-
+TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //hello
+        mAuth = FirebaseAuth.getInstance();
+text=findViewById(R.id.textt);
+        Button gbutton=findViewById(R.id.Gmailbutton);
+        createRequest();
+        gbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
     }
 
     private void createRequest() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -88,15 +98,17 @@ public class MainActivity extends AppCompatActivity {
 //                progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             } catch (Throwable throwable) {
-
+                Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
 //                progressbar.setVisibility(View.GONE);
                 throwable.printStackTrace();
+                text.setText(throwable.getMessage().toString());
+
             }
         } else {
 //            progressbar.setVisibility(View.GONE);}
         }}
         private void firebaseAuthWithGoogle (GoogleSignInAccount acct){
-
+            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
 
             AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
             mAuth.signInWithCredential(credential)
@@ -107,12 +119,13 @@ public class MainActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUser(user);
+                                text.setText("Sign In");
 //                                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
 //                                startActivity(intent);
 
 
                             } else {
-//                                Toast.makeText(loginjava.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
 
 
                             }
@@ -123,11 +136,9 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
         private void updateUser (FirebaseUser user){
+            Toast.makeText(this, user.getEmail().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "HeLLo  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
-//        progressbar.setVisibility(View.GONE);
-//            Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            startActivity(intent);
         }
 
     }

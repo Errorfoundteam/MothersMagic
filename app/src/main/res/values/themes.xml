@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MothersMagic" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.MothersMagic" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#FF0000</item>
         <item name="colorPrimaryVariant">#FF0000</item>
