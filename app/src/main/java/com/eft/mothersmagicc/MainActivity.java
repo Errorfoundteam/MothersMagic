@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
 import android.transition.Fade;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -47,14 +48,17 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
-TextView text;
+EditText phnumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //hello
+
+        phnumber=findViewById(R.id.phnumber);
         mAuth = FirebaseAuth.getInstance();
-text=findViewById(R.id.textt);
+
         Button gbutton=findViewById(R.id.Gmailbutton);
         createRequest();
         gbutton.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +105,7 @@ text=findViewById(R.id.textt);
                 Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
 //                progressbar.setVisibility(View.GONE);
                 throwable.printStackTrace();
-                text.setText(throwable.getMessage().toString());
+                Toast.makeText(getApplicationContext(), throwable.getMessage(),Toast.LENGTH_SHORT).show();
 
             }
         } else {
@@ -119,7 +123,7 @@ text=findViewById(R.id.textt);
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUser(user);
-                                text.setText("Sign In");
+//                                text.setText("Sign In");
 //                                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
 //                                startActivity(intent);
 
@@ -139,6 +143,9 @@ text=findViewById(R.id.textt);
             Toast.makeText(this, user.getEmail().toString(), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "HeLLo  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(getBaseContext(), otpActivity.class);
+            intent.putExtra("Phnumber", phnumber.getText().toString());
+            startActivity(intent);
         }
 
     }
