@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splashhome_back</item>
+        <item name="colorPrimary">#FF1F44</item>
+        <item name="colorPrimaryDark">#FF1F44</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:statusBarColor">#FF1F44</item>
+        <item name="android:navigationBarColor">#FF1F44</item>
+    </style>
+</resources>
