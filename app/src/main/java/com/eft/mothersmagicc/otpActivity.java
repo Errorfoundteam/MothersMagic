@@ -47,7 +47,10 @@ public class otpActivity extends AppCompatActivity {
 resend.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        resend.setVisibility(View.GONE);
+        countDownTimer.onFinish();
         requestOtp(phnumber);
+        Toast.makeText(otpActivity.this, "Resending Code....", Toast.LENGTH_SHORT).show();
     }
 });
         LoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -118,8 +121,8 @@ resend.setOnClickListener(new View.OnClickListener() {
 
     private void requestOtp(String phnumber) {
 //        progressbar.setVisibility(View.VISIBLE);
-        resend.setVisibility(View.GONE);
-        startTimer();
+
+
         PhoneAuthProvider.getInstance().verifyPhoneNumber(phnumber,120L, TimeUnit.SECONDS,this,mCallbacks);
     }
 
@@ -177,6 +180,7 @@ resend.setOnClickListener(new View.OnClickListener() {
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
             sentcode=s;
+            startTimer();
             Toast.makeText(otpActivity.this, "Code Sent", Toast.LENGTH_SHORT).show();
 //
 //            progressbar.setVisibility(View.GONE);
