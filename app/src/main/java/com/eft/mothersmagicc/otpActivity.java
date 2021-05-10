@@ -59,7 +59,7 @@ resend.setOnClickListener(new View.OnClickListener() {
                 code = recievedOtpTv.getText().toString();
 
                 if (code.length() != 6) {
-                    recievedOtpTv.setError("Otp must be of ^ digits...");
+                    recievedOtpTv.setError("Incorrecet Otp");
                     recievedOtpTv.requestFocus();
                     return;
                 }else {
