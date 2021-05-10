@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MothersMagic"
         tools:targetApi="n">
-        <activity android:name=".otpActivity"></activity>
-        <activity android:name=".SplashActivity"
+        <activity android:name=".Userdetail"></activity>
+        <activity android:name=".otpActivity" />
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/ThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

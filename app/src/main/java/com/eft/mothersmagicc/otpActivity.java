@@ -3,6 +3,7 @@ package com.eft.mothersmagicc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -54,8 +55,8 @@ resend.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 code = recievedOtpTv.getText().toString();
 
-                if (code.isEmpty() || code.length() < 6) {
-                    recievedOtpTv.setError("Wrong OTP...");
+                if (code.length() != 6) {
+                    recievedOtpTv.setError("Otp must be of ^ digits...");
                     recievedOtpTv.requestFocus();
                     return;
                 }else {
@@ -100,7 +101,10 @@ resend.setOnClickListener(new View.OnClickListener() {
 
     private void PhoneAuthSuccessfully() {
         Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
-        //
+
+        Intent intent = new Intent(getBaseContext(), Userdetail.class);
+
+        startActivity(intent);
 //        progressbar.setVisibility(View.GONE);
 //        String user="Y";
 //        SQLiteDatabase conn=openOrCreateDatabase("db",MODE_PRIVATE,null);
