@@ -1,9 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".otpActivity">
+    tools:context=".otpActivity"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="bottom"
+                android:text="In one Blink\n\nwe will auto verify the OTP sent to"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp" />
+
+            <TextView
+                android:id="@+id/PhonenoId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="bottom"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/RecievedOtpId"
+            android:layout_width="152dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColorHint="#C4C4C4"
+            android:inputType="phone"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Auto Verifying OTP in "
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/RecievedOtpId"
+            app:layout_constraintStart_toStartOf="@+id/RecievedOtpId"
+            app:layout_constraintTop_toBottomOf="@+id/RecievedOtpId" />
+
+        <TextView
+            android:id="@+id/tv_resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Resend OTP"
+            android:textAllCaps="false"
+            android:clickable="false"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/RecievedOtpId"
+            app:layout_constraintStart_toEndOf="@+id/RecievedOtpId"
+            app:layout_constraintTop_toTopOf="@+id/RecievedOtpId"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:id="@+id/AuthenticateBtnId"
+            android:layout_width="180dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Verify Now"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/RecievedOtpId"
+            app:layout_constraintStart_toStartOf="@+id/RecievedOtpId"
+            app:layout_constraintTop_toBottomOf="@+id/RecievedOtpId" />
+
+        <ImageView
+            android:layout_width="425dp"
+            android:layout_height="379dp"
+            android:layout_marginTop="62dp"
+            android:src="@drawable/vector1"
+            app:layout_constraintEnd_toEndOf="@+id/AuthenticateBtnId"
+            app:layout_constraintHorizontal_bias="0.314"
+            app:layout_constraintStart_toStartOf="@+id/AuthenticateBtnId"
+            app:layout_constraintTop_toBottomOf="@+id/AuthenticateBtnId" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

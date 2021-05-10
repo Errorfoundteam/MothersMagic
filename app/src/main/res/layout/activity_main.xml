@@ -52,7 +52,8 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@+id/viewPagerLoginActivity"
         app:layout_constraintStart_toStartOf="@+id/viewPagerLoginActivity"
-        app:layout_constraintTop_toBottomOf="@+id/viewPagerLoginActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerLoginActivity"
+        tools:ignore="MissingClass" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="159dp"
@@ -87,10 +88,10 @@
             android:inputType="phone"
             android:maxLines="1"
             android:paddingStart="40dp"
-            android:paddingEnd="5dp"
-            android:textColor="#000"
             android:paddingLeft="40dp"
-            android:paddingRight="5dp" />
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#000" />
 
         <Button
             android:id="@+id/ButtonPhoneLogin"

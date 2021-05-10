@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.eft.mothersmagicc.Adapter.ViewPagerAdapter;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -41,23 +43,77 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+
+import kotlin.jvm.internal.Intrinsics;
 
 public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
 EditText phnumber;
+Button ButtonPhoneLogin;
+    private ViewPager mViewPager ;
+    private ViewPagerAdapter slideAdapter;
+    int currentpage=-1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //hello
+        mViewPager=findViewById(R.id.viewPagerLoginActivity);
+        SpringDotsIndicator mImageView = findViewById(R.id.imageViewForThreeDot);  //this is your imageView
 
-        phnumber=findViewById(R.id.phnumber);
+Handler handler=new Handler();
+
+Runnable Update=new Runnable(){
+
+    @Override
+    public void run() {
+        mViewPager.setCurrentItem(++currentpage,true);
+        if (currentpage == 3 - 1) {
+            currentpage = -1;
+            // ++currentPage will make currentPage = 0
+        }
+    }
+};
+Timer timer=new Timer();
+timer.schedule(new TimerTask() {
+    @Override
+    public void run() {
+        handler.post(Update);
+    }
+},1000,1000);
+slideAdapter= new ViewPagerAdapter(this);
+mViewPager.setAdapter(slideAdapter);
+mImageView.setViewPager(mViewPager);
+
+
+
+                phnumber=findViewById(R.id.phnumber);
         mAuth = FirebaseAuth.getInstance();
+
+
+        Button ButtonPhoneLogin=findViewById(R.id.ButtonPhoneLogin);
+        ButtonPhoneLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (phnumber.getText().toString().length() == 10){
+                    Intent intent = new Intent(getBaseContext(), otpActivity.class);
+                    intent.putExtra("Phnumber", phnumber.getText().toString());
+                    startActivity(intent);
+                }
+                else{
+                    phnumber.setError("Enter Valid Number");
+                }
+            }
+        });
+
 
         Button gbutton=findViewById(R.id.Gmailbutton);
         createRequest();
@@ -143,8 +199,8 @@ EditText phnumber;
             Toast.makeText(this, user.getEmail().toString(), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "HeLLo  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getBaseContext(), otpActivity.class);
-            intent.putExtra("Phnumber", phnumber.getText().toString());
+            Intent intent = new Intent(getBaseContext(), Userdetail.class);
+
             startActivity(intent);
         }
 
