@@ -88,7 +88,7 @@ timer.schedule(new TimerTask() {
     public void run() {
         handler.post(Update);
     }
-},1000,1000);
+},2000,2000);
 slideAdapter= new ViewPagerAdapter(this);
 mViewPager.setAdapter(slideAdapter);
 mImageView.setViewPager(mViewPager);
