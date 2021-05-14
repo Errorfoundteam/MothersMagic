@@ -54,6 +54,7 @@
             android:fontFamily="@font/montserrat"
             android:paddingStart="15dp" />
         <ImageView
+            android:id="@+id/map2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -112,4 +113,5 @@
     android:layout_gravity="center"
     android:textColor="#FFFFFF"
     android:background="@drawable/blackround"/>
+
 </LinearLayout>
