@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.common.api.PendingResults
 import com.google.android.gms.location.*
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.tasks.Task
@@ -22,6 +23,7 @@ import com.google.android.gms.tasks.Task
 class Userdetail : AppCompatActivity() {
     lateinit var mapimg :ImageView
     var REQUEST_CHECK_SETTINGS = 16958
+    var rqstcode = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_userdetail)
@@ -36,15 +38,32 @@ class Userdetail : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK){
-            checkGpsStatus()
+            //checkGpsStatus()
+            startActivity(Intent(this,MapsActivity::class.java))
         }else{
             // googleGpsEnabler()  // it will ask for loaction again and again if user denies
         }
     }
+
+    override fun onRequestPermissionsResult(requestCode: Int, RuntimePermission: Array<String> ,  grantResults: IntArray){
+        when(requestCode){
+            rqstcode -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    checkGpsStatus()
+                } else {
+                    Toast.makeText(this, "Please allow location access", Toast.LENGTH_SHORT).show()
+                }
+                return
+            }
+            else -> {
+                // Ignore all other requests.
+            }}}
+
+
     private fun googleGpsEnabler(){
         val locationRequest = LocationRequest.create()?.apply {
-            interval = 100
-            fastestInterval = 100
+            interval = 500
+            fastestInterval = 500
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
         val builder = locationRequest?.let {
@@ -92,21 +111,15 @@ class Userdetail : AppCompatActivity() {
 
     private fun checkPermission() {
         if (ContextCompat.checkSelfPermission(this,
-                        Manifest.permission.ACCESS_FINE_LOCATION) !==
+                        Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                            Manifest.permission.ACCESS_FINE_LOCATION)) {
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
-                checkPermission()
-            } else {
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
-                checkPermission()
-            }
+
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), rqstcode)
+
         }
         else{
             googleGpsEnabler()
         }
     }
+
 }
