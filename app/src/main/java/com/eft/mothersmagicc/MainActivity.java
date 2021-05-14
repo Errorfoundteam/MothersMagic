@@ -180,8 +180,8 @@ mImageView.setViewPager(mViewPager);
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUser(user);
 //                                text.setText("Sign In");
-//                                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
-//                                startActivity(intent);
+                                Intent intent = new Intent(getApplicationContext(), Userdetail.class);
+                               startActivity(intent);
 
 
                             } else {
@@ -197,7 +197,7 @@ mImageView.setViewPager(mViewPager);
         }
         private void updateUser (FirebaseUser user){
             Toast.makeText(this, user.getEmail().toString(), Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "HeLLo  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Hello  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getBaseContext(), Userdetail.class);
 
