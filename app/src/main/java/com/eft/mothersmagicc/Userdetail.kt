@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.location.LocationManager
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -27,6 +28,14 @@ class Userdetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_userdetail)
+        val phrase = intent.getStringExtra("intent").toString()
+        val info = intent.getStringExtra("value").toString()
+        if (phrase == "P"){
+            Toast.makeText(this, info, Toast.LENGTH_SHORT).show()
+            val editText = findViewById<EditText>(R.id.phoneno_edit_text)
+            editText.setText(info).toString()
+            editText.isEnabled=false
+        }
 
         mapimg = findViewById(R.id.map2)
         mapimg.setOnClickListener {

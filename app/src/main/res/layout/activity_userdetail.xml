@@ -43,9 +43,10 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:hint="Enter Location"
+            android:layout_weight="0.9"
             android:background="@drawable/blank"
             android:textSize="20sp"
             android:paddingLeft="15dp"
@@ -55,7 +56,8 @@
             android:paddingStart="15dp" />
         <ImageView
             android:id="@+id/map2"
-            android:layout_width="40dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginRight="5dp"
@@ -70,9 +72,11 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:id="@+id/phoneno_edit_text"
             android:hint="Enter number"
+            android:layout_weight="0.9"
             android:background="@drawable/blank"
             android:textSize="20sp"
             android:paddingLeft="55dp"
@@ -82,8 +86,9 @@
             android:fontFamily="@font/montserrat"
             android:paddingStart="55dp" />
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_weight="0.1"
             android:layout_gravity="center"
             android:layout_marginRight="5dp"
             android:layout_marginEnd="5dp"
