@@ -33,6 +33,7 @@ public class otpActivity extends AppCompatActivity {
     TextView tvCountdown;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillisecond=60000;
+    private String phn0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,7 @@ public class otpActivity extends AppCompatActivity {
         resend=findViewById(R.id.tv_resend);
         tvCountdown=findViewById(R.id.tv_countdown);
         String phnumber = "+91"+getIntent().getStringExtra("Phnumber");
+        phn0 = phnumber;
         mAuth = FirebaseAuth.getInstance();
         requestOtp(phnumber);
 resend.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +108,10 @@ resend.setOnClickListener(new View.OnClickListener() {
         Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(getBaseContext(), Userdetail.class);
-
+        intent.putExtra("intent","P");
+        intent.putExtra("value",phn0);
         startActivity(intent);
+
 //        progressbar.setVisibility(View.GONE);
 //        String user="Y";
 //        SQLiteDatabase conn=openOrCreateDatabase("db",MODE_PRIVATE,null);
