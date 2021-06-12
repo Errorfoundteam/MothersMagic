@@ -180,8 +180,6 @@ mImageView.setViewPager(mViewPager);
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUser(user);
 //                                text.setText("Sign In");
-                                Intent intent = new Intent(getApplicationContext(), Userdetail.class);
-                               startActivity(intent);
 
 
                             } else {
@@ -200,7 +198,8 @@ mImageView.setViewPager(mViewPager);
             Toast.makeText(this, "Hello  "+user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getBaseContext(), Userdetail.class);
-
+            intent.putExtra("intent","G");
+            intent.putExtra("value",user.getEmail());
             startActivity(intent);
         }
 

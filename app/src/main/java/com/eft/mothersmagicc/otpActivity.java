@@ -42,8 +42,9 @@ public class otpActivity extends AppCompatActivity {
         LoginBtn=findViewById(R.id.AuthenticateBtnId);
         resend=findViewById(R.id.tv_resend);
         tvCountdown=findViewById(R.id.tv_countdown);
-        String phnumber = "+91"+getIntent().getStringExtra("Phnumber");
-        phn0 = phnumber;
+        String phnumb = getIntent().getStringExtra("Phnumber");
+        phn0 = phnumb;
+        String phnumber="+91"+phnumb;
         mAuth = FirebaseAuth.getInstance();
         requestOtp(phnumber);
 resend.setOnClickListener(new View.OnClickListener() {

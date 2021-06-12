@@ -24,6 +24,7 @@
         android:textSize="30sp"
         android:layout_marginBottom="45dp"/>
     <EditText
+        android:id="@+id/name_edittext"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Enter Name"
@@ -43,6 +44,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/location_edittext"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:hint="Enter Location"
@@ -99,6 +101,7 @@
         android:layout_height="50dp"
         android:hint="Enter Email Id"
         android:textSize="20sp"
+        android:id="@+id/email_edit_text"
         android:paddingLeft="15dp"
         android:text=""
         android:layout_marginTop="30dp"
@@ -108,6 +111,7 @@
         android:paddingStart="15dp" />
 
 <TextView
+    android:id="@+id/submit_details"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Confirm"
