@@ -107,7 +107,7 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
     override fun onRestart() {
         super.onRestart()
         Toast.makeText(this, "Restart", Toast.LENGTH_SHORT).show()
-
+location_edit.textSize= 12.0F
         location_edit.setText(savedata.shortlocation).toString()
 
     }
