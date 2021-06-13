@@ -49,5 +49,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+    //Navigation bar & animation
+    implementation 'com.etebarian:meow-bottom-navigation:1.0.4'
+    implementation 'com.airbnb.android:lottie:3.0.7'
 
+    //CIrcleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 }
+
