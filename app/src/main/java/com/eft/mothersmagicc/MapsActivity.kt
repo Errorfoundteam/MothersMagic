@@ -24,6 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import java.util.*
+import com.eft.mothersmagicc.model.savedata
 import java.util.jar.Manifest
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -32,6 +33,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var gpsStatus : Boolean = false
     private var requestCODE = 101
     private lateinit var fusedLocationProviderClient : FusedLocationProviderClient
+    private lateinit var Lat : String
+    private lateinit var Lng : String
+    private lateinit var SrtAdd : String
+    private lateinit var LngAdd : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,13 +58,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         findViewById<TextView>(R.id.submit_location).setOnClickListener {
             if (findViewById<EditText>(R.id.popupET).text.toString() !=""){
-                val intent = Intent(this,Userdetail::class.java)
-                intent.putExtra("LatLong","")
-                intent.putExtra("SrtAdd","")
-                intent.putExtra("FullAdd","")
-                startActivity(intent)
+
             }
         }
+
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         if (gpsStatus) {
@@ -124,6 +126,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.makeText(this@MapsActivity,
                             getAddress(location.latitude,location.longitude),Toast.LENGTH_SHORT
                     ).show()
+                    Lat = location.latitude.toString()
+                    Lng = location.longitude.toString()
                     animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 18f))
                 }
 
@@ -140,6 +144,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             "${mMap.cameraPosition.target.latitude} and ${mMap.cameraPosition.target.longitude}",
                             Toast.LENGTH_SHORT
                     ).show()
+                    Lat = mMap.cameraPosition.target.latitude.toString()
+                    Lng = mMap.cameraPosition.target.longitude.toString()
                     Toast.makeText(this@MapsActivity,
                             getAddress(mMap.cameraPosition.target.latitude,mMap.cameraPosition.target.longitude), Toast.LENGTH_SHORT
                     ).show()
@@ -180,6 +186,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         findViewById<EditText>(R.id.popupET3).setText(b)
         countryName = adress[0].countryName
         Log.d("Debug:", "Your City: $cityName ; your Country $countryName")
+        LngAdd = adress[0].getAddressLine(0)
+        SrtAdd = y
         return cityName
     }
 
