@@ -3,6 +3,7 @@ package com.eft.mothersmagicc
 import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
@@ -49,6 +50,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         autoTextView.setAdapter(adapter)
         autoTextView.threshold = 1
         */
+
+        findViewById<TextView>(R.id.submit_location).setOnClickListener {
+            if (findViewById<EditText>(R.id.popupET).text.toString() !=""){
+                val intent = Intent(this,Userdetail::class.java)
+                intent.putExtra("LatLong","")
+                intent.putExtra("SrtAdd","")
+                intent.putExtra("FullAdd","")
+                startActivity(intent)
+            }
+        }
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         if (gpsStatus) {
@@ -132,6 +143,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.makeText(this@MapsActivity,
                             getAddress(mMap.cameraPosition.target.latitude,mMap.cameraPosition.target.longitude), Toast.LENGTH_SHORT
                     ).show()
+
                 }
                 mMap.setOnCameraMoveListener {
                     mMap.clear()
@@ -159,8 +171,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             }}
         cityName = adress[0].getAddressLine(0)
-        val j = adress[0].subLocality
-        findViewById<EditText>(R.id.popupET).setText(j)
+        val j = " " + adress[0].subLocality
+        val x = adress[0].getAddressLine(0).toString().split(",")
+        val y=" "+ x[0]+", "+x[1]+ ", "+ x[2]
+        val b = " " + adress[0].adminArea
+        findViewById<EditText>(R.id.popupET).setText(y)
+        findViewById<EditText>(R.id.popupET2).setText(j)
+        findViewById<EditText>(R.id.popupET3).setText(b)
         countryName = adress[0].countryName
         Log.d("Debug:", "Your City: $cityName ; your Country $countryName")
         return cityName

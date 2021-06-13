@@ -8,6 +8,7 @@ import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
@@ -145,8 +146,13 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
         task.addOnSuccessListener { locationSettingsResponse ->
             // All location settings are satisfied. The client can initialize
             // location requests here.
-            checkGpsStatus()
-            Log.d("TAG","here1")
+            val handler = Handler()
+            handler.postDelayed({
+                // do something after 1000ms
+                checkGpsStatus()
+                Log.d("TAG","here1")
+            }, 3000)
+
             //startActivity(Intent(this,MapsActivity::class.java))
         }
 
