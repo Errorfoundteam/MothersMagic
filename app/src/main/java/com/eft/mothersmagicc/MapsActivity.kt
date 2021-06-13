@@ -3,7 +3,6 @@ package com.eft.mothersmagicc
 import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
@@ -25,7 +24,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import java.util.*
 import com.eft.mothersmagicc.model.savedata
-import java.util.jar.Manifest
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -33,10 +31,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var gpsStatus : Boolean = false
     private var requestCODE = 101
     private lateinit var fusedLocationProviderClient : FusedLocationProviderClient
-    private lateinit var Lat : String
-    private lateinit var Lng : String
-    private lateinit var SrtAdd : String
-    private lateinit var LngAdd : String
+    private var lat : String = ""
+    private  var lng : String = ""
+    private  var srtAdd : String = ""
+    private  var lngAdd : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +42,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
 
         isLocationIsActive()
 
@@ -57,9 +56,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         */
 
         findViewById<TextView>(R.id.submit_location).setOnClickListener {
-            if (findViewById<EditText>(R.id.popupET).text.toString() !=""){
-
+            if (lat.isNotEmpty() &&lng.isNotEmpty() &&srtAdd.isNotEmpty() &&lngAdd.isNotEmpty()){
+savedata(lat,lng,srtAdd,lngAdd)
+                onBackPressed()
+            }else{
+                Toast.makeText(this,"Gps not working pls reopen this page again",Toast.LENGTH_SHORT).show()
             }
+
         }
 
 
@@ -126,8 +129,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.makeText(this@MapsActivity,
                             getAddress(location.latitude,location.longitude),Toast.LENGTH_SHORT
                     ).show()
-                    Lat = location.latitude.toString()
-                    Lng = location.longitude.toString()
+                    lat = location.latitude.toString()
+                    lng = location.longitude.toString()
                     animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 18f))
                 }
 
@@ -144,8 +147,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             "${mMap.cameraPosition.target.latitude} and ${mMap.cameraPosition.target.longitude}",
                             Toast.LENGTH_SHORT
                     ).show()
-                    Lat = mMap.cameraPosition.target.latitude.toString()
-                    Lng = mMap.cameraPosition.target.longitude.toString()
+                    lat = mMap.cameraPosition.target.latitude.toString()
+                    lng = mMap.cameraPosition.target.longitude.toString()
                     Toast.makeText(this@MapsActivity,
                             getAddress(mMap.cameraPosition.target.latitude,mMap.cameraPosition.target.longitude), Toast.LENGTH_SHORT
                     ).show()
@@ -186,8 +189,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         findViewById<EditText>(R.id.popupET3).setText(b)
         countryName = adress[0].countryName
         Log.d("Debug:", "Your City: $cityName ; your Country $countryName")
-        LngAdd = adress[0].getAddressLine(0)
-        SrtAdd = y
+        lngAdd = adress[0].getAddressLine(0)
+        srtAdd = y
         return cityName
     }
 
@@ -223,5 +226,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             Toast.makeText(this@MapsActivity,"Current location ${lastLocation.latitude}and${lastLocation.longitude}",Toast.LENGTH_LONG).show()
             onMapReady(mMap)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

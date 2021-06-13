@@ -22,13 +22,13 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
-
+import  com.eft.mothersmagicc.model.savedata
 
 class Userdetail : AppCompatActivity() {
     lateinit var mapimg :ImageView
     var REQUEST_CHECK_SETTINGS = 16958
     var rqstcode = 1
-    var verifyno:Boolean = true
+    lateinit var location_edit:EditText
     lateinit var child:String
     lateinit var usernode:String
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,18 +38,20 @@ class Userdetail : AppCompatActivity() {
         val info = intent.getStringExtra("value").toString()
         val submit_details=findViewById<TextView>(R.id.submit_details)
         val name_edit=findViewById<EditText>(R.id.name_edittext)
-        val location_edit=findViewById<EditText>(R.id.location_edittext)
+         location_edit=findViewById<EditText>(R.id.location_edittext)
         val peditText = findViewById<EditText>(R.id.phoneno_edit_text)
         val geditText = findViewById<EditText>(R.id.email_edit_text)
 
         if (phrase == "P"){
-verifyno=true
+
+            location_edit.setText(savedata.shortlocation).toString()
+
             submit_details.setText("Submit")
             Toast.makeText(this, info, Toast.LENGTH_SHORT).show()
             peditText.setText(info).toString()
             peditText.isEnabled=false
         }else{
-            verifyno=false
+
             submit_details.setText("Verify Number")
             Toast.makeText(this, info, Toast.LENGTH_SHORT).show()
 //            geditText.setText(info).toString()
@@ -92,12 +94,21 @@ child="EmailLogin"
                }
             } else{
 
+
 saveUserDetailsToFirebase(name_edit.text.toString(),
         geditText.text.toString(),
         peditText.text.toString(),
         location_edit.text.toString())
             }
         }
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this, "Restart", Toast.LENGTH_SHORT).show()
+
+        location_edit.setText(savedata.shortlocation).toString()
 
     }
 
@@ -115,6 +126,7 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, RuntimePermission: Array<String> ,  grantResults: IntArray){
+        super.onRequestPermissionsResult(requestCode, RuntimePermission, grantResults)
         when(requestCode){
             rqstcode -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
@@ -210,12 +222,17 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
             ref.child("name").setValue(fullName)
             ref.child("email").setValue(emailID)
             ref.child("phno").setValue(phoneNumber)
-            ref.child("add").setValue(address)
-            Toast.makeText(this, "Data Saved Successfully...........", Toast.LENGTH_SHORT).show()
+            ref.child("shortadd").setValue(savedata.shortlocation)
+            ref.child("latitude").setValue(savedata.latitude)
+            ref.child("longitude").setValue(savedata.longitude)
+            ref.child("longadd").setValue(savedata.longlocation)
+            startActivity(Intent(this,Homepage::class.java))
         }catch (e:Exception){
             Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
 
         }
 
     }
+
+    
 }
