@@ -227,6 +227,8 @@ location_edit.textSize= 12.0F
             ref.child("longitude").setValue(savedata.longitude)
             ref.child("longadd").setValue(savedata.longlocation)
             startActivity(Intent(this,Homepage::class.java))
+            finish()
+
         }catch (e:Exception){
             Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
 
@@ -234,5 +236,4 @@ location_edit.textSize= 12.0F
 
     }
 
-    
 }
