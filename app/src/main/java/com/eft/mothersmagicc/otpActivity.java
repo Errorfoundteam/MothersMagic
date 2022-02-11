@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -42,8 +44,9 @@ public class otpActivity extends AppCompatActivity {
         LoginBtn=findViewById(R.id.AuthenticateBtnId);
         resend=findViewById(R.id.tv_resend);
         tvCountdown=findViewById(R.id.tv_countdown);
-        String phnumber = "+91"+getIntent().getStringExtra("Phnumber");
-        phn0 = phnumber;
+        String phnumb = getIntent().getStringExtra("Phnumber");
+        phn0 = phnumb;
+        String phnumber="+91"+phnumb;
         mAuth = FirebaseAuth.getInstance();
         requestOtp(phnumber);
 resend.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +83,11 @@ resend.setOnClickListener(new View.OnClickListener() {
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential){
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Toast.makeText(otpActivity.this,"1", Toast.LENGTH_LONG).show();
+
                         if(task.isSuccessful()){
                             //successfully signed in as code of user and sent code matched;
 //                            autoverify.cancel();
@@ -100,6 +106,20 @@ resend.setOnClickListener(new View.OnClickListener() {
 
 
                         }
+                    }
+                })
+                .addOnCanceledListener(this, new OnCanceledListener() {
+                    @Override
+                    public void onCanceled() {
+                        Toast.makeText(otpActivity.this, "2 CAncelled", Toast.LENGTH_LONG).show();
+
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(otpActivity.this,"3 Failure", Toast.LENGTH_LONG).show();
+
                     }
                 });
     }

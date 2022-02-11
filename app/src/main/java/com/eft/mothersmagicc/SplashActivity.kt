@@ -32,11 +32,11 @@ class SplashActivity : AppCompatActivity() {
                     val intent = Intent(this,MainActivity::class.java)
                     when {
                         phAccount.currentUser != null -> {
-                            startActivity(Intent(this, MainActivity::class.java))
+                            startActivity(Intent(this, Homepage::class.java))
 
                         }
                         googleAccount != null -> {
-                            startActivity(Intent(this, MainActivity::class.java))
+                            startActivity(Intent(this, Homepage::class.java))
                         }
                         else -> {
                         val options = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
