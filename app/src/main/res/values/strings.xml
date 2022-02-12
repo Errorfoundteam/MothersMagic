@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">"Mother's Magic"</string>
     <string name="title_activity_maps">Map</string>
+    <string-array name="Location">
+        <item>Ratu Road</item>
+        <item>Piska More</item>
+        <item>Lalpur</item>
+        <item>Bariyatu</item>
+        <item>VisualBasic</item>
+    </string-array>
 </resources>
