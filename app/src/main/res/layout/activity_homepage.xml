@@ -7,100 +7,162 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Homepage">
-<!--    Search Layout-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:visibility="gone"
-        android:id="@+id/searchlayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#1976D2"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
     <!--    Home Layout-->
+<ScrollView
 
+    android:id="@+id/hopagelayout"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/hopagelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#B5FFFFFF"
-android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+android:orientation="vertical">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:orientation="vertical"
-    android:layout_marginBottom="-50dp"
-    android:background="@drawable/redblock">
+    >
     <Spinner
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
 
         android:layout_gravity="center_horizontal"
         android:id="@+id/SpinnerAreaId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <ImageView
-        android:padding="30dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/text"/>
-    <EditText
-        android:background="@drawable/searchbackground"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="5dp"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        />
+        android:paddingLeft="30dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's Eat"
+            android:fontFamily="@font/lemon"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="0.156"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pure"
+            android:fontFamily="@font/lemon"
+            android:paddingTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.792" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </LinearLayout>
+<!--        //add view-->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black">
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/AddviewPagerHomepage"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/testadd">
 
-            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-                android:id="@+id/AddViewForThreeDot"
+
+            <com.synnapps.carouselview.CarouselView
+
+                android:id="@+id/AddCarouselHomepage"
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp"/>
+        </LinearLayout>
+        <HorizontalScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+            android:scrollbars="none">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <!--        -->
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Fast Food"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/redcurvebutton"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Fast Food"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/redcurvebutton"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Fast Food"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/redcurvebutton"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Fast Food"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/redcurvebutton"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Fast Food"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/redcurvebutton"/>
+    </LinearLayout>
+</HorizontalScrollView>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+
+            android:scrollbars="none"
+            android:layout_height="400dp">
+            <include
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:dampingRatio="0.5"
-                app:dotsColor="#fff"
-                app:dotsStrokeColor="#A4F3F0F0"
-                app:dotsCornerRadius="9dp"
-                app:dotsSize="12dp"
-                app:dotsSpacing="6dp"
-                app:dotsStrokeWidth="2dp"
-                app:stiffness="300"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                tools:ignore="MissingClass" />
-        </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/HomeRecycleId"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_margin="15dp"
+                layout="@layout/itemlist_homepage" />
+        </HorizontalScrollView>
+
+
+
     </LinearLayout>
+</ScrollView>
     <!--    Profile Layout-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
