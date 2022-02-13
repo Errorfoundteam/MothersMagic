@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Homepage">
-    <!--    Home Layout-->
-<ScrollView
+    <!--    Home Layout   -->
+    <ScrollView
 
     android:id="@+id/hopagelayout"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -35,6 +34,7 @@ android:orientation="vertical">
         android:id="@+id/SpinnerAreaId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:paddingTop="15dp"
         android:paddingBottom="10dp"
@@ -96,75 +96,67 @@ android:orientation="vertical">
                 app:strokeColor="#FF777777"
                 app:strokeWidth="1dp"/>
         </LinearLayout>
-        <HorizontalScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="60dp"
-            android:scrollbars="none">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp">
-        <!--        -->
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Fast Food"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/redcurvebutton"/>
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Fast Food"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/redcurvebutton"/>
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Fast Food"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/redcurvebutton"/>
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Fast Food"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/redcurvebutton"/>
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Fast Food"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/redcurvebutton"/>
-    </LinearLayout>
-</HorizontalScrollView>
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-
-            android:scrollbars="none"
-            android:layout_height="400dp">
-            <include
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                layout="@layout/itemlist_homepage" />
-        </HorizontalScrollView>
-
-
+<!--        <HorizontalScrollView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="60dp"-->
+<!--            android:scrollbars="none">-->
+<!--    <LinearLayout-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="60dp">-->
+<!--        &lt;!&ndash;        &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:text="Fast Food"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@drawable/redcurvebutton"/>-->
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:text="Fast Food"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@drawable/redcurvebutton"/>-->
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:text="Fast Food"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@drawable/redcurvebutton"/>-->
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:text="Fast Food"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@drawable/redcurvebutton"/>-->
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:text="Fast Food"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@drawable/redcurvebutton"/>-->
+<!--    </LinearLayout>-->
+<!--</HorizontalScrollView>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/Home_itemrecycler_view"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </ScrollView>
     <!--    Profile Layout-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:visibility="gone"
         android:id="@+id/profilepagelayout"
@@ -179,7 +171,6 @@ android:orientation="vertical">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigation"
@@ -196,6 +187,5 @@ android:orientation="vertical">
         app:mbn_rippleColor="#000000"
         app:mbn_selectedIconColor="#000000"
         app:mbn_shadowColor="#5000" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
