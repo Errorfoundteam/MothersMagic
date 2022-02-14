@@ -162,12 +162,13 @@ android:orientation="vertical">
         android:id="@+id/profilepagelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D32F2F"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/activity_profile"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

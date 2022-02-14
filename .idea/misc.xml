@@ -3,23 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/drawable/black_curve_bg.xml" value="0.155" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/drawable/ic_home.xml" value="0.155" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/drawable/ic_user.xml" value="0.155" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/drawable/redcurvebutton.xml" value="0.152" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/drawable/whitecurvebackground.xml" value="0.155" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_homepage.xml" value="0.2" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_open.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_open_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_test_home_page.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/item_view_holder.xml" value="0.264" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/itemlist_homepage.xml" value="0.264" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/trending_items_homeactivity.xml" value="0.25416666666666665" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout-v21/activity_profile.xml" value="0.264" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_homepage.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_main.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_maps.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_open.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_otp.xml" value="0.25025641025641027" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_profile.xml" value="0.2" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_sourav.xml" value="0.25416666666666665" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_sourav_test.xml" value="0.25025641025641027" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_splash.xml" value="0.25025641025641027" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_userdetail.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/item_view_holder.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/itemlist_homepage.xml" value="0.20863616930312098" />
+        <entry key="..\:/MothersMagic/app/src/main/res/layout/slide_pager.xml" value="0.20863616930312098" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
 </project>
