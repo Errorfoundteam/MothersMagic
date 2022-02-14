@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Homepage">
     <!--    Home Layout   -->
+<!--  Home page  -->
     <ScrollView
 
     android:id="@+id/hopagelayout"
