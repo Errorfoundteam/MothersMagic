@@ -28,6 +28,7 @@ class Userdetail : AppCompatActivity() {
     lateinit var mapimg :ImageView
     var REQUEST_CHECK_SETTINGS = 16958
     var rqstcode = 1
+    var check=false
     lateinit var location_edit:EditText
     lateinit var child:String
     lateinit var usernode:String
@@ -70,7 +71,7 @@ child="EmailLogin"
         }
         mapimg = findViewById(R.id.map2)
         mapimg.setOnClickListener {
-
+check=true
             checkPermission()
         }
 
@@ -101,7 +102,7 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
         location_edit.text.toString())
             }
         }
-
+        checkPermission()
     }
 
     override fun onRestart() {
@@ -203,7 +204,7 @@ location_edit.textSize= 12.0F
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), rqstcode)
 
         }
-        else{
+        else if(check){
             googleGpsEnabler()
         }
     }
