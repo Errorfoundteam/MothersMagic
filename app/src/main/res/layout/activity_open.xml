@@ -4,15 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OpenActivity"
-    android:background="@color/colorPrimaryVariant">
+    tools:context=".OpenActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/mothersmaic"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:src="@drawable/testitempicture"
+        android:scaleType="centerCrop"
+        android:transitionName="itemTransition"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+
+<!--    <com.getbase.floatingactionbutton.FloatingActionsMenu-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="25dp"-->
+<!--        android:src="@drawable/testorder"-->
+<!--        app:fab_expandDirection="up"-->
+<!--        app:fab_lablsPositions="left"-->
+<!--        app:fab_labelStyle=""-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fab_colorNormal="#FFF"-->
+<!--            app:fab_size="mini"-->
+<!--            app:fab_icon=""-->
+<!--            app:fab_title="Add to Cart"/>-->
+<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fab_colorNormal="#FFF"-->
+<!--            app:fab_size="mini"-->
+<!--            app:fab_icon=""-->
+<!--            app:fab_title="Order Now"/>-->
+<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fab_colorNormal="#FFF"-->
+<!--            app:fab_size="mini"-->
+<!--            app:fab_icon=""-->
+<!--            app:fab_title="Schedule Order"/>-->
+
+
+<!--    </com.getbase.floatingactionbutton.FloatingActionsMenu>-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -151,6 +151,7 @@ android:orientation="vertical">
             android:layout_width="match_parent"
             android:id="@+id/Home_itemrecycler_view"
             android:orientation="horizontal"
+
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_height="match_parent"/>
 
