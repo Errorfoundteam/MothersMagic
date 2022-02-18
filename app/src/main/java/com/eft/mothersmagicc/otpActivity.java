@@ -134,12 +134,7 @@ resend.setOnClickListener(new View.OnClickListener() {
 
 //        progressbar.setVisibility(View.GONE);
 //        String user="Y";
-//        SQLiteDatabase conn=openOrCreateDatabase("db",MODE_PRIVATE,null);
-//
-//        conn.execSQL("create table if not exists phlogin(user varchar,phnumber varchar);");
-//        conn.execSQL("insert into phlogin values("+"'"+user+"'"+","+"'"+phnumber+"'"+");");
-//        Intent i = new Intent(getApplicationContext(),HomeScreen.class);
-//        startActivity(i);
+
 
     }
 

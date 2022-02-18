@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.database.sqlite.SQLiteDatabase
 import android.location.LocationManager
 import android.os.Bundle
 import android.os.Handler
@@ -17,12 +18,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.eft.mothersmagicc.model.savedata
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
-import  com.eft.mothersmagicc.model.savedata
 
 class Userdetail : AppCompatActivity() {
     lateinit var mapimg :ImageView
@@ -227,7 +228,14 @@ location_edit.textSize= 12.0F
             ref.child("latitude").setValue(savedata.latitude)
             ref.child("longitude").setValue(savedata.longitude)
             ref.child("longadd").setValue(savedata.longlocation)
-            startActivity(Intent(this,Homepage::class.java))
+
+            val conn: SQLiteDatabase = openOrCreateDatabase("db", MODE_PRIVATE, null)
+
+            conn.execSQL("create table if not exists phlogin(user varchar,phnumber varchar,email varchar,shortadd varchar,longadd varchar,long varchar,lati varchar);")
+            conn.execSQL("insert into phlogin values('$fullName','$phoneNumber','$emailID','${savedata.shortlocation}','${savedata.longlocation}','${savedata.longitude}','${savedata.latitude}');")
+            val i = Intent(applicationContext, Homepage::class.java)
+            startActivity(i)
+
             finish()
 
         }catch (e:Exception){

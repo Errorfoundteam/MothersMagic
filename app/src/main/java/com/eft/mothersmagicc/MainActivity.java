@@ -203,4 +203,11 @@ mImageView.setViewPager(mViewPager);
             startActivity(intent);
         }
 
+    @Override
+    public void onBackPressed() {
+
+        MainActivity.this.finish();
+        System.exit(0);
+
     }
+}

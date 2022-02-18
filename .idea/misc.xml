@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_homepage.xml" value="0.11302083333333333" />
-        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_open.xml" value="0.536" />
+        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_homepage.xml" value="0.4" />
+        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_open.xml" value="0.264" />
+        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/activity_userdetail.xml" value="0.12360688956433637" />
         <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/item_view_holder.xml" value="0.12360688956433637" />
         <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/itemlist_homepage.xml" value="0.12360688956433637" />
+        <entry key="..\:/Android Projects/MothersMagic/app/src/main/res/layout/place_holder.xml" value="0.25416666666666665" />
         <entry key="..\:/MothersMagic/app/src/main/res/layout-v21/activity_profile.xml" value="0.264" />
         <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_homepage.xml" value="0.20863616930312098" />
         <entry key="..\:/MothersMagic/app/src/main/res/layout/activity_main.xml" value="0.20863616930312098" />
