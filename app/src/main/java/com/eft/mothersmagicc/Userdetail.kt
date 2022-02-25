@@ -65,7 +65,7 @@ class Userdetail : AppCompatActivity() {
             name_edit.setText(googleAccount.displayName).toString()
             geditText.isEnabled=false
 child="EmailLogin"
-  usernode=googleAccount.email.substringBefore(".")
+  usernode= googleAccount.email!!.substringBefore(".")
         }else{
             child="PhoneLogin"
             usernode=info

@@ -60,6 +60,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "84424602955-is84vb8s915mst5o6gscqjb23cb5ohei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eft.mothersmagicc",
+            "certificate_hash": "1de209113d7066f452b4d72241015aa896017cb5"
+          }
+        },
+        {
+          "client_id": "84424602955-kqg9ijnhcjgvmjuc7837l9je4j2eno9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eft.mothersmagicc",
+            "certificate_hash": "9e9ff19e4d789a1a58fa9815ab0429ed20d02935"
+          }
+        },
+        {
           "client_id": "84424602955-4iu9ae3m45cdcua2dve5e2c9ajblrfaq.apps.googleusercontent.com",
           "client_type": 3
         }
