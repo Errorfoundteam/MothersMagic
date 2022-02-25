@@ -1,11 +1,13 @@
 package com.eft.mothersmagicc;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -118,15 +120,7 @@ ArrayList<getfoodlist> list;
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                        new ResultCallback<Status>() {
-                            @Override
-                            public void onResult(Status status) {
-                                deletetable();
-                            }
-                        });
-            FirebaseAuth.getInstance().signOut();
-
+                loggingout();
             }
         });
 
@@ -192,6 +186,32 @@ ArrayList<getfoodlist> list;
             }
         });
     getUserDataFromSql();
+    }
+
+    private void loggingout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Homepage.this);
+        builder.setMessage("Log out will remove your data and you need to login again for further orders.");
+        builder.setTitle("Are you Sure?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //do things
+
+                Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                        new ResultCallback<Status>() {
+                            @Override
+                            public void onResult(Status status) {
+                                deletetable();
+                                FirebaseAuth.getInstance().signOut();
+                            }
+                        });
+
+            }
+        });
+
+        builder.setNegativeButton("NO",null);
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private void getUserDataFromSql() {
