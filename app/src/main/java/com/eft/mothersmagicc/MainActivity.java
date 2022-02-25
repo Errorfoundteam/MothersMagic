@@ -209,5 +209,6 @@ mImageView.setViewPager(mViewPager);
         MainActivity.this.finish();
         System.exit(0);
 
+
     }
 }
