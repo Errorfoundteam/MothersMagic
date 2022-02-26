@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,14 @@ public class OpenActivity extends AppCompatActivity {
                 .placeholder(R.drawable.testitempicture)
                 .error(R.drawable.testitempicture)
                 .into(imageView);
+
+        Button ordernow=findViewById(R.id.ordernow);
+        ordernow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Orderpage.class));
+            }
+        });
 
     }
 }
