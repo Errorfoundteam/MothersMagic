@@ -4,13 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OpenActivity">
+    tools:context=".OpenActivity"
+    android:background="#D7777777">
 
-    <ImageView
+
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:id="@+id/linearLayout2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/whitehalfroundsheet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="286dp"
         android:scaleType="centerCrop"
+
+        app:civ_border_width="5dp"
+        app:civ_border_color="#FFFFFF"
         android:src="@drawable/testitempicture"
         android:transitionName="itemTransition"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,68 +39,117 @@
 
     <TextView
         android:id="@+id/name1"
+        android:layout_marginStart="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="xxxxxxx"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:fontFamily="@font/lemon"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Halwa"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-<!--    <com.getbase.floatingactionbutton.FloatingActionsMenu-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="25dp"-->
-<!--        android:src="@drawable/testorder"-->
-<!--        app:fab_expandDirection="up"-->
-<!--        app:fab_lablsPositions="left"-->
-<!--        app:fab_labelStyle=""-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent">-->
-<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:fab_colorNormal="#FFF"-->
-<!--            app:fab_size="mini"-->
-<!--            app:fab_icon=""-->
-<!--            app:fab_title="Add to Cart"/>-->
-<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:fab_colorNormal="#FFF"-->
-<!--            app:fab_size="mini"-->
-<!--            app:fab_icon=""-->
-<!--            app:fab_title="Order Now"/>-->
-<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:fab_colorNormal="#FFF"-->
-<!--            app:fab_size="mini"-->
-<!--            app:fab_icon=""-->
-<!--            app:fab_title="Schedule Order"/>-->
 
+    <TextView
+        android:id="@+id/price"
+        android:layout_marginEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="₹ 500"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-<!--    </com.getbase.floatingactionbutton.FloatingActionsMenu>-->
+    <TextView
+        android:id="@+id/cookedby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="by-Savita bhavi"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/name1"
+        app:layout_constraintStart_toStartOf="@+id/name1"
+        app:layout_constraintTop_toBottomOf="@+id/name1" />
 
-    <Button
-        android:id="@+id/ordernow"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cookedby"
+        app:layout_constraintBottom_toBottomOf="@+id/cookedby"
+        app:layout_constraintStart_toEndOf="@+id/cookedby"
+        app:layout_constraintTop_toTopOf="@+id/cookedby" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/starrr"
+        app:layout_constraintStart_toStartOf="@+id/name1"
+        app:layout_constraintTop_toBottomOf="@+id/cookedby" />
+
+    <TextView
+
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.5"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/ingrediants"
+        android:padding="30dp"
+        android:text="Variety of different sweet and food items available
+It is also a prime property
+The shop cum restaurant is older than me I used to visit since my childhood.
+Awesome sweet but I like gajar  moong Dal ka halwa most.
+Snacks and other street food items are also available with great taste."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order Now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/ordernow"
+        android:text="Schedule Order"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/redcurvebutton"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <Button
-        android:layout_width="200dp"
+    <TextView
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/scheduleordernow"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Schedule Order"
+        android:background="@drawable/redcurvebutton"
+        android:gravity="center"
+        android:text="Order Now"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/ordernow"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ordernow"
         app:layout_constraintStart_toStartOf="@+id/ordernow" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

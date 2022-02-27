@@ -60,7 +60,7 @@ public class Homepage extends AppCompatActivity {
     int currentpage=-1;
     RecyclerView recyclerView;
     private GoogleApiClient mGoogleApiClient;
-ArrayList<getfoodlist> list;
+    ArrayList<getfoodlist> list;
     HomeRecyclerViewAdapter myadapter;
     @Override
     protected void onStart() {
@@ -125,7 +125,7 @@ ArrayList<getfoodlist> list;
         });
 
 
-//bottom navigation bar
+        //bottom navigation bar
         bottomNavigation.show(0,true);
         bottomNavigation.add(new MeowBottomNavigation.Model(0,R.drawable.ic_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_user));

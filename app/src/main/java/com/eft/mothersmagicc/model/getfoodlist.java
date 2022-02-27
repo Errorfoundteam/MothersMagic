@@ -1,5 +1,4 @@
 package com.eft.mothersmagicc.model;
-
 public class getfoodlist {
     private String availability;
     private String bestseller;
@@ -19,11 +18,9 @@ public class getfoodlist {
     private String trending;
     private String veg;
     private String priceperkg;
-
-
     private String image;
     public getfoodlist(){}
-    public getfoodlist( String availability, String bestseller,String category1,                       String category2,                       String category3,                       String cookedBy,                       String details,                       String foodname,                       String full_price,                       String half_price,                       String ingrediants,                       String location,                       String ratings,                       String time,                       String totalbuyers,                       String trending, String veg,                       String priceperkg,String image){
+    public getfoodlist( String availability, String bestseller,String category1,String category2,String category3,String cookedBy,String details,String foodname,String full_price,String half_price,String ingrediants,String location,String ratings,String time, String totalbuyers,String trending, String veg,String priceperkg,String image){
        this.foodname=foodname;
         this.availability=availability;this.cookedBy=cookedBy;
         this.bestseller=bestseller;this.details=details;
@@ -36,7 +33,7 @@ public class getfoodlist {
         this.priceperkg=priceperkg;
         this.category2=category2;
         this.category3=category3;
-this.image=image;
+        this.image=image;
     }
 
     public String getAvailability() {

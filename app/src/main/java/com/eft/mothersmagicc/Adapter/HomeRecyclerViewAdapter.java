@@ -68,6 +68,7 @@ ArrayList<getfoodlist> listt;
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(context, OpenActivity.class);
+                i.putExtra("position",position);
                 ActivityOptionsCompat optionsCompat=ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,holder.itemImage,
                         Objects.requireNonNull(ViewCompat.getTransitionName(holder.itemImage)));
 

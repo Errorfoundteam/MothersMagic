@@ -11,10 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.eft.mothersmagicc.model.getfoodlist;
 import com.eft.mothersmagicc.model.savedata;
 
-public class OpenActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class OpenActivity extends AppCompatActivity {
+    ArrayList<getfoodlist> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +34,33 @@ public class OpenActivity extends AppCompatActivity {
                 .error(R.drawable.testitempicture)
                 .into(imageView);
 
-        Button ordernow=findViewById(R.id.ordernow);
+        TextView ordernow=findViewById(R.id.ordernow);
         ordernow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),Orderpage.class));
             }
         });
+
+
+
+
+        list= savedata.foodarray;
+        int position= getIntent().getExtras().getInt("position");
+
+        TextView price=findViewById(R.id.price);
+        TextView coockedby=findViewById(R.id.cookedby);
+        TextView ingrediants=findViewById(R.id.ingrediants);
+        TextView ratings=findViewById(R.id.textView12);
+
+        name.setText(list.get(position).getFoodname());
+        price.setText("₹ "+list.get(position).getFull_price());
+
+//        coockedby.setText(list.get(position).getCookedBy());
+//        ingrediants.setText(list.get(position).getIngrediants());
+
+//        ratings.setText(list.get(position).getRatings());
+
 
     }
 }
