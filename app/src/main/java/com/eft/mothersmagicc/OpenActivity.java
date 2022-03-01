@@ -35,12 +35,7 @@ public class OpenActivity extends AppCompatActivity {
                 .into(imageView);
 
         TextView ordernow=findViewById(R.id.ordernow);
-        ordernow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Orderpage.class));
-            }
-        });
+        ordernow.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),Orderpage.class)));
 
 
 
@@ -56,10 +51,11 @@ public class OpenActivity extends AppCompatActivity {
         name.setText(list.get(position).getFoodname());
         price.setText("₹ "+list.get(position).getFull_price());
 
-//        coockedby.setText(list.get(position).getCookedBy());
-//        ingrediants.setText(list.get(position).getIngrediants());
+        //uncommented code
+        coockedby.setText(list.get(position).getCookedBy());
+        ingrediants.setText(list.get(position).getIngrediants());
 
-//        ratings.setText(list.get(position).getRatings());
+        ratings.setText(list.get(position).getRatings());
 
 
     }
