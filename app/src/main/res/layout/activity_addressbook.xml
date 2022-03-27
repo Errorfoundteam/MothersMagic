@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addressbook">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_margin="20dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/deflttedittxt"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/location_edittext"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.9"
+            android:background="@drawable/blank"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="Enter Location"
+            android:paddingStart="15dp"
+            android:paddingLeft="15dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/map2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/locationiconimg" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"/>
+</LinearLayout>

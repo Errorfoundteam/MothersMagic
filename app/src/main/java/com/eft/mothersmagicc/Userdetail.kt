@@ -64,8 +64,8 @@ class Userdetail : AppCompatActivity() {
             geditText.setText(googleAccount.email).toString()
             name_edit.setText(googleAccount.displayName).toString()
             geditText.isEnabled=false
-child="EmailLogin"
-  usernode= googleAccount.email!!.substringBefore(".")
+            child="EmailLogin"
+            usernode= googleAccount.email!!.substringBefore(".")
         }else{
             child="PhoneLogin"
             usernode=info
@@ -102,6 +102,7 @@ saveUserDetailsToFirebase(name_edit.text.toString(),
         peditText.text.toString(),
         location_edit.text.toString())
             }
+
         }
         checkPermission()
     }
@@ -187,6 +188,7 @@ location_edit.textSize= 12.0F
     }
 
     private fun checkGpsStatus() {
+
         val locationManager = applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         val gpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         if (gpsStatus) {
@@ -229,10 +231,20 @@ location_edit.textSize= 12.0F
             ref.child("longitude").setValue(savedata.longitude)
             ref.child("longadd").setValue(savedata.longlocation)
 
+            // Local database code
             val conn: SQLiteDatabase = openOrCreateDatabase("db", MODE_PRIVATE, null)
 
             conn.execSQL("create table if not exists phlogin(user varchar,phnumber varchar,email varchar,shortadd varchar,longadd varchar,long varchar,lati varchar);")
             conn.execSQL("insert into phlogin values('$fullName','$phoneNumber','$emailID','${savedata.shortlocation}','${savedata.longlocation}','${savedata.longitude}','${savedata.latitude}');")
+
+            val ab="default"
+            val addd=savedata.longlocation;
+//            conn.execSQL("create table if not exists address(sno varchar,abb varchar,addd varchar);")
+//            conn.execSQL("insert into address values(''1',${ab},'${addd.toString()}');")
+
+
+            // Local database code end
+
             val i = Intent(applicationContext, Homepage::class.java)
             startActivity(i)
 

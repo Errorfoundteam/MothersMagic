@@ -20,7 +20,8 @@ public class getfoodlist {
     private String priceperkg;
     private String image;
     public getfoodlist(){}
-    public getfoodlist( String availability, String bestseller,String category1,String category2,String category3,String cookedBy,String details,String foodname,String full_price,String half_price,String ingrediants,String location,String ratings,String time, String totalbuyers,String trending, String veg,String priceperkg,String image){
+    public getfoodlist( String availability, String bestseller,String category1,String category2,String category3,String cookedBy,String details,String foodname,String full_price,String half_price,String ingrediants,String location,String ratings,String time, String totalbuyers,String trending, String veg,String priceperkg,String image)
+    {
        this.foodname=foodname;
         this.availability=availability;this.cookedBy=cookedBy;
         this.bestseller=bestseller;this.details=details;

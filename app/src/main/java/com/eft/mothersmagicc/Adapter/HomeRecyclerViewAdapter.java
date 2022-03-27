@@ -87,6 +87,7 @@ ArrayList<getfoodlist> listt;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
         ConstraintLayout baselayout;
         ImageView itemImage;
         TextView Foodname,coockedby,foodprice;

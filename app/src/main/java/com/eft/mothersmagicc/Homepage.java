@@ -58,9 +58,9 @@ public class Homepage extends AppCompatActivity {
     private ViewPagerAdapter homeslideAdapter;
     ScrollView HompageLayout;
     int currentpage=-1;
-    RecyclerView recyclerView;
     private GoogleApiClient mGoogleApiClient;
     ArrayList<getfoodlist> list;
+    RecyclerView recyclerView;
     HomeRecyclerViewAdapter myadapter;
     @Override
     protected void onStart() {
@@ -158,7 +158,7 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
-
+// firebase data
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference myRef=database.getReference("FoodItems/Jharkhand/Ranchi");
@@ -224,6 +224,7 @@ public class Homepage extends AppCompatActivity {
         if (c.moveToFirst()) {
             name.setText(c.getString(0));
             ph.setText(c.getString(1));
+            savedata.setUserPh(c.getString(1));
             Toast.makeText(this, name+"  "+ph, Toast.LENGTH_LONG).show();
         }
 

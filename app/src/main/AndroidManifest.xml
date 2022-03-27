@@ -22,6 +22,16 @@
         android:theme="@style/Theme.MothersMagic"
         tools:targetApi="n">
         <activity
+            android:name=".payment_option"
+            android:exported="false" />
+        <activity
+            android:name=".newaddressbook"
+            android:exported="false"
+            android:noHistory="true" />
+        <activity
+            android:name=".addressbook"
+            android:exported="false" />
+        <activity
             android:name=".Orderpage"
             android:exported="false" />
         <activity
